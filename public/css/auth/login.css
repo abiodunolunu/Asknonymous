@@ -1,0 +1,220 @@
+body {
+    min-height: 100vh;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+   
+}
+
+.form-wrapper {
+    /* position: absolute; */
+    /* top: 50%; */
+    /* left: 50%; */
+    max-width: 500px;
+    /*border: 1px solid #ccc;*/
+    /*box-shadow: 0 0 10px #999;*/
+    min-height: 200px;
+    padding: 1rem 0;
+    border-radius: 8px;
+    background-color: var(--clr-2);
+    background-image: linear-gradient(to bottom right, rgba(0,0,0,0), var(--clr-dark));
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.form-wrapper form {
+    padding: 1em;
+}
+
+.form-wrapper .form-text {
+    /* color: #faface; */
+    text-align: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+
+.form-text p {
+    text-align: center;
+}
+
+.form-wrapper form {
+    width: 100%;
+}
+
+
+.form-item {
+    position: relative;
+    /* background-color: #fff; */
+    height: 35px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    border-radius: 4px;
+}
+
+.form-item input {
+    text-align: center;
+    padding: 10px 10px;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    background-color: var(--clr-dark);
+    color: var(--clr-1);
+    /* background-color: #faface; */
+    /* font-weight: bold; */
+}
+
+.form-item input:focus {
+    /* border: 2px solid #faface; */
+}
+
+.form-item label {
+    position: absolute;
+    top: 7px;
+    display: flex;
+    align-items: center;
+    left: 10px;
+    transition: 0.3s ease-in;
+    color: var(--clr-body);
+    pointer-events: none;
+    font-family: Calibri, sans-serif;
+}
+
+
+.form-item input:valid~label {
+    padding: 2px 10px;
+    background-color: var(--clr-2);
+    font-weight: bold;
+    color: #faface;
+    font-size: 12px;
+    top: -8px;
+    left: 15px;
+}
+
+.form-item input:focus~label {
+    padding: 2px 2px;
+    background-color: transparent;
+    font-weight: bold;
+    color: var(--clr-body);
+    font-size: 12px;
+    top: -51%;
+    left: 15px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.form-item.text-col {
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+form textarea {
+    resize: none;
+    padding: 10px 10px;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    outline: none;
+    border-radius: 4px;
+    border: 1px solid #bbb;
+}
+
+form textarea:focus {
+    border: 2px solid #A359B9;
+}
+
+.form-item textarea:valid~label {
+    padding: 2px 10px;
+    background-color: inherit;
+    font-weight: bold;
+    /* color: grey; */
+    font-size: 12px;
+    top: -8px;
+    left: 15px;
+}
+
+.form-item textarea:focus~label {
+    padding: 2px 2px;
+    background-color: inherit;
+    font-weight: bold;
+    /* color: #365da3; */
+    font-size: 12px;
+    top: -8px;
+    left: 15px;
+}
+
+label.up {
+    padding: 2px 10px;
+    background-color: inherit;
+    font-weight: bold;
+    color: red;
+    background-color: #faface;
+    font-size: 12px;
+    top: -8px;
+    left: 15px;
+}
+
+
+form input[type="submit"] {
+    all: unset;
+    display: block;
+    margin: auto;
+    cursor: pointer;
+    background-color: var(--clr-5);
+    padding: 5px 20px;
+    color: rgba(0, 0, 0, .7);
+    font-weight: var(--fw-3);
+    transform: scale(1);
+    transition: transform ease-in-out 150ms;
+}
+
+form input[type="submit"]:hover,
+form input[type="submit"]:active {
+    transform: scale(1.1);
+
+}
+
+.alt {
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding: 0 1em;
+}
+
+.alt a {
+    font-size: var(--fs-small);
+    color: var(--clr-1);
+}
+
+.alt a:hover {
+    /* font-weight: bold; */
+    text-decoration: underline;
+    color: inherit;
+}
+
+@media (max-width: 36em) {
+    .form-wrapper {
+        border-radius: 0;
+        /* min-height: 40vh; */
+        width: 100%;
+      
+    }
+
+    .form-wrapper > h1 {
+        margin-bottom: 10px;
+    }
+
+    .form-item.half {
+        width: 100%;
+    }
+}

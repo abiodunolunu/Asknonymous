@@ -1,0 +1,32 @@
+<%- include('../includes/head.ejs') %>
+
+<body>
+    <%- include('../includes/nav.ejs') %>
+    <main>
+        <div class="form-wrapper">
+            <div class="form-text">
+                <h2>Password Reset</h2>
+                <p>Enter your email to reset password</p>
+            </div>
+            <% if (flashContent != null) { %>
+            <div class="flash">
+                <p class="<%= flashType %>"><%= flashContent %></p>
+            </div>
+            <% } %>
+            <form action="/reset" method="POST" novalidate>
+                <div class="form-item">
+                    <input value="<%= oldInput.email %>" type="email" name="email" required>
+                    <label for="">Email</label>
+                </div>
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <input type="submit" value="Reset Password">
+            </form>
+            <div class="alt">
+                <a href="/login">Go back?</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/form.js"></script>
+
+    <%- include('../includes/footer.ejs') %>

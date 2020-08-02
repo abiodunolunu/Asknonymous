@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= pageTitle %></title>
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+        integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+        <link rel="stylesheet" href="/css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <%  if(path === '/login' || path === '/signup' || path === '/reset' || path === '/new-password') { %>
+    <link rel="stylesheet" href="/css/auth/login.css">
+    <% } %>
+    <%  if(path === '/index') { %>
+    <link rel="stylesheet" href="/css/index.css">
+    <% } %>
+    <%  if(path === '/messages') { %>
+    <link rel="stylesheet" href="/css/messages.css">
+    <% } %>
+    <%  if(path === '/userbox') { %>
+    <link rel="stylesheet" href="/css/userbox.css">
+    <% } %>

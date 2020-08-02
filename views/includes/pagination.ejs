@@ -1,0 +1,38 @@
+<section class="pagination">
+    <!-- <% if (currentPage !== 1 && previousPage !== 1) { %>
+    <a href="/messages?page=1">1</a>
+    <% } %>
+    <%if  (hasPreviousPage) { %>
+    <a href="/messages?page=<%= previousPage %>"><%= previousPage %></a>
+    <% } %>
+    <a href="/messages?page=<%= currentPage %>" class="active"><%= currentPage %></a>
+    <%if (hasNextPage) { %>
+    <a href="/messages?page=<%= nextPage %>"><%= nextPage %></a>
+    <% } %>
+    <%if (lastPage !== currentPage && nextPage !== lastPage) { %>
+    <a href="/messages?page=<%= lastPage %>"><%= lastPage %></a>
+    <% } %>
+    <div class="amountofpages">
+        <p>Page <%= currentPage %> of <%= lastPage%></p>
+    </div> -->
+
+ <% if (currentPage !== 1 && previousPage !== 1) { %>
+    <a href="/messages?page=1">1</a>
+    <% } %>
+
+    <%if  (hasPreviousPage) { %>
+        <a href="/messages?page=<%= currentPage - 1 %>"><%= previousPage %></a>
+        <% } %>
+
+        <%if (hasNextPage) { %>
+            <a href="/messages?page=<%= currentPage + 1 %>"><%= nextPage %></a>
+            <% } %>
+
+            <%if (lastPage !== currentPage && nextPage !== lastPage) { %>
+                <a href="/messages?page=<%= lastPage %>"><%= lastPage %></a>
+                <% } %>
+
+            <div class="amountofpages">
+                <p>Page <%= currentPage %> of <%= lastPage%></p>
+            </div>
+</section>

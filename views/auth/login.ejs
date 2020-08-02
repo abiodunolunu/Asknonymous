@@ -1,0 +1,38 @@
+<%- include('../includes/head.ejs') %>
+</head>
+
+<body>
+<%- include('../includes/nav.ejs') %>
+<main>
+    <!--<% if (flashContent != null) { %>-->
+    <!--<div class="flash">-->
+        <!--<p class="<%= flashType %>"><%= flashContent %></p>-->
+    <!--</div>-->
+    <!--<% } %>-->
+<div class="form-wrapper">
+    <% if (flashContent != null) { %>
+        <div class="flash">
+            <p class="<%= flashType %>"><%= flashContent %></p>
+        </div>
+    <% } %>
+    <form action="/login" method="POST">
+        <div class="form-item">
+            <input value="<%= oldInput.email %>" type="email" name="email" required>
+            <label for="">Email</label>
+        </div>
+        <div class="form-item">
+            <input value="<%= oldInput.password %>" type="password" name="password" required>
+            <label for="">Password</label>
+        </div>
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <input type="submit" value="Login">
+    </form>
+    <div class="alt">
+        <a href="/reset">Forgot password?</a>
+        <a href="/signup">Don't have an account yet?</a>
+    </div>
+</div>
+</main>
+
+<script src="/js/form.js"></script>
+<%- include('../includes/footer.ejs') %>

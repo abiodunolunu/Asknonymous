@@ -1,0 +1,56 @@
+<%- include('../includes/head.ejs') %>
+
+</head>
+
+<body>
+    <%- include('../includes/nav.ejs') %>
+
+    <main>
+        <section class="messages-wrapper">
+            <div class="heading">
+                <h1>Your Messages</h1>
+            </div>
+            <% if (messages.length > 0) { %>
+            <div class="messages">
+                <%messages.forEach(msg => { %>
+                <div class="message">
+                    <p class="_msg">Message:</p>
+                    <div class="message__content">
+                        <%= msg.text.content %>
+                    </div>
+                    <div class="sender-time">
+                        <p>-Anonymous [<%= moment(msg.createdAt).fromNow() %>]
+                            <%= moment(msg.createdAt).format('lll') %> </p>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+
+            
+            <%- include('../includes/pagination.ejs', {
+                hasNextPage: hasNextPage,
+                hasPreviousPage: hasPreviousPage,
+                nextPage: nextPage,
+                previousPage: previousPage,
+                currentPage: currentPage,
+                lastPage: lastPage
+            }) %>
+
+            <% } else { %>
+            <h1 style="text-align: center;">You've no message... Yet</h1>
+            <%}%>
+            
+                <div class="share-links">
+                    <a class="w-a"> <i class="fa fa-whatsapp"></i> Share link with your friends </a>
+                    <input id="userIdInput" type="hidden" value="<%= user._id %>">
+                </div>
+
+            <a href="/" class="home-link">Go back</a>
+        </section>
+    </main>
+
+    <script>
+        const USER_ID = document.querySelector('#userIdInput').value;
+        document.querySelector('.w-a').setAttribute('href', `https://api.whatsapp.com/send?text=Send me a message anonymously, Let's have some fun 😂❤👉 ${window.location.origin}/u/${USER_ID}`)
+    </script>
+    <%- include('../includes/footer.ejs') %>

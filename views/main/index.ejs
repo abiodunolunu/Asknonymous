@@ -1,0 +1,32 @@
+<%- include('../includes/head.ejs') %>
+</head>
+
+<body>
+    <%- include('../includes/nav.ejs') %>
+
+    <main>
+        <% if (flashContent != null) { %>
+        <div class="flash">
+            <p class="<%= flashType %>"><%= flashContent %></p>
+        </div>
+        <% } %>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Send Secret Anonymous Messages Online
+                    </h1>
+                    <p class="hero-text">
+                        Asknonymous let's you send and receive Anonymous messages. Share your link to your friends and
+                        let them have their fun with you.
+                    </p>
+                    <a href="/<%= authenticated ? 'messages' : 'login' %> " class="hero-link">
+                        <%= authenticated ? 'Check Messages' : 'Get Started' %>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <%- include('../includes/footer.ejs') %>

@@ -1,0 +1,162 @@
+body {
+    /* background-color: #e63946; */
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.messages-wrapper {
+    width: 93%;
+    max-width: 500px;
+    padding: 1rem 0rem;
+    background-color: var(--clr-2);
+    color: var(--clr-body);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.heading {
+    margin-bottom: 20px;
+}
+
+.heading h1{
+    font-size: 40px;
+    text-align: center;
+}
+
+.messages {
+
+}
+
+
+
+.message {
+    border-top: 5px solid var(--clr-3);
+    /* border-radius: 10px; */
+    padding: 1rem;
+    text-align: left;
+    /* margin-top: 8px; */
+    background-color: var(--clr-4);
+
+}
+
+.messages:last-of-type {
+    border-bottom: 5px solid var(--clr-3);
+
+}
+
+
+._msg {
+    font-size: 12px;
+    /* font-weight: 700; */
+    margin-bottom: 6px;
+    color: var(--clr-body);
+}
+
+.message__content {
+    margin-bottom: 6px;
+    color: var(--clr-1);
+    /*font-style: italic;*/
+    word-break: break-all;
+}
+
+.sender-time {
+    color: lightblue;
+    font-size: 11px;
+}
+
+.home-link {
+    /* background-image: linear-gradient(to right, deeppink, coral, hotpink); */
+    background-color: var(--clr-4);
+    background-size: 200%;
+    background-position: left;
+    display: block;
+    width: 180px;
+    margin: auto;
+    margin-top: 10px;
+    color: var(--clr-1);
+    font-weight: 700;
+    padding: 8px 0px;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    transition: background-position 0.3s ease-in;
+    text-transform: uppercase;
+}
+
+.home-link:hover, .home-link:active {
+    background-position: right;
+    background-color: #e63946;
+    color: #f1faee;
+    border: 2px solid #f1faee;
+}
+
+.pagination {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pagination a {
+    background-color: var(--clr-dark);
+    color: #fff;
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination .amountofpages {
+    margin-top: 10px;
+    font-size: 0.75em;
+    width: 100%;
+    color: var(--clr-body);
+}
+
+.share-links {
+    background-color: #fff;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.share-links .w-a {
+    padding: 10px 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00e676;
+}
+
+.w-a i {
+    color: #00e676;
+    font-size: 22px;
+    margin-right: 12px;
+}
+
+.w-a:hover {
+    background-color: #00e676;
+    color: #fff;
+}
+
+.w-a:hover i {
+    color: #fff;
+}
+
+@media (max-width: 36em) {
+    .messages-wrapper {
+        width: 100%;
+        border-radius: 0;
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,53 @@
+<%- include('../includes/head.ejs') %>
+<style>
+
+</style>
+</head>
+
+<body>
+    <%- include('../includes/nav.ejs') %>
+
+
+    <main>
+        <section class="userbox">
+            <div class="container">
+                <div class="form-wrapper">
+                    <h1>Say something</h1>
+                    <form action="/messages" method="POST" novalidate>
+                        <p>Say something about <%= userFullname %></p>
+                        <% if (errorMessage != '') { %>
+                            <div class="flash">
+                                <p class="error"><%= errorMessage %></p>
+                            </div>
+                        <% } %>
+                        <textarea required minlength="1" name="msg" placeholder="Leave A message for <%= userFullname %> here..."></textarea>
+                        <input name="userId" value="<%= userId %>" hidden>
+                        <input name="userFullname" value=" <%=userFullname%>" type="hidden">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <button type="submit">Send Message</button>
+                        <!--<input type="submit" value="Send Message">-->
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const form = document.querySelector("form")
+        const textarea = form.querySelector("textarea")
+        const letters = /[0-9a-zA-Z]+./
+
+        // form.addEventListener('keyup', (e) => {
+        //    if(e.keyCode === 13 && !e.shiftKey) {
+        //        const strArr = textarea.value.split('')
+        //        const final = strArr.filter(s => {
+        //            return s.charCodeAt() !== 32 && s.charCodeAt() !== 10
+        //        })
+        //        console.log(final)
+        //        if(final.length > 0) {
+        //            return form.submit()
+        //        }
+        //    }
+        // })
+    </script>
+    <%- include('../includes/footer.ejs') %>

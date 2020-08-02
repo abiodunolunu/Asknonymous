@@ -1,0 +1,27 @@
+<header class="header">
+    <nav class="navbar">
+        
+    <div class="menu-icon" onclick="toggle()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+        <a href="/" class="brand">Asknonymous</a>
+        
+            <ul class="nav-list" id="nav-list">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Download</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                <% if(authenticated) { %>
+                <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+              <% } else { %>
+                <li class="nav-item has-dropdown"><a class="nav-link" href="#">Get Started</a>
+                    <ul class="drop-down">
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/signup">Register</a></li>
+                    </ul>
+                </li>
+              <% } %>
+            </ul>
+    </nav>
+</header>

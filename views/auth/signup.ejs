@@ -1,0 +1,70 @@
+<%- include('../includes/head.ejs') %>
+<style>
+    form {
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    h1 {
+        color: var(--clr-body);
+    }
+
+    .form-item {
+        width: 100%;
+    }
+
+    .half {
+        width: 46%;
+        display: inline-block;
+    }
+</style>
+
+<body>
+    <%- include('../includes/nav.ejs') %>
+    <main>
+        
+
+    <div class="form-wrapper">
+        <h1 style="text-align: center; width: 100%;">Fill In your details</h1>
+        <% if (errorMessage) { %>
+            <div class="flash">
+               <% validationErrors.forEach(e => { %>
+                    <p class="error"><%= e.msg %></p>
+                <% }) %>
+            </div>
+        <%}%>
+        <form action="/signup" method="POST"> 
+            <div class="form-item half">
+                <input value="<%= oldInput.firstname %>" type="text" name="firstname" required>
+                <label for="">First name</label>
+            </div>
+            <div class="form-item half">
+                <input  value="<%= oldInput.lastname %>" type="text" name="lastname" required>
+                <label for="">Last name</label>
+            </div>
+            <div class="form-item">
+                <input  value="<%= oldInput.email %>" type="email" name="email" required>
+                <label for="">Email Address</label>
+            </div>
+            <div class="form-item">
+                <input  value="<%= oldInput.password %>" type="password" name="password" required>
+                <label for="">password</label>
+            </div>
+            <div class="form-item">
+                <input  value="<%= oldInput.confirmPassword %>" type="password" name="confirmPassword" required>
+                <label for="">confirm password</label>
+            </div>
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <input type="submit">
+        </form>
+        <div class="alt">
+            <a href="/login">Already have an account?</a>
+        </div>
+    </div>
+</main>
+
+<script src="/js/form.js"></script>
+
+<%- include('../includes/footer.ejs') %>
